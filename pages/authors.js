@@ -31,4 +31,4 @@ const showAuthors = (array) => {
   renderToDOM('#store', domString);
 };
 
-export { showAuthors, emptyAuthors };
+export { emptyAuthors, showAuthors };

@@ -17,7 +17,7 @@ const addAuthorForm = (obj = {}) => {
         <label for="title">Email</label>
         <input type="email" class="form-control" id="email" aria-describedby="Email" placeholder="Enter Email" required value="${obj.email || ''}">
       </div>
-      <button type="submit" class="btn btn-primary mt-3">Submit Author</button>
+      <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update author' : 'Submit author'}</button>
     </form>`;
 
   renderToDOM('#form-container', domString);

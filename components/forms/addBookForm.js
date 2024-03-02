@@ -3,8 +3,9 @@ import renderToDOM from '../../utils/renderToDom';
 import selectAuthor from './selectAuthor';
 
 // USING THIS FORM FOR BOTH CREATE AND UPDATE
-const addBookForm = (obj = {}) => {
+const addBookForm = (uid, obj = {}) => {
   clearDom();
+  console.warn('Book Obj', obj);
   const domString = `
     <form id="${obj.firebaseKey ? `update-book--${obj.firebaseKey}` : 'submit-book'}" class="mb-4">
       <div class="form-group">
@@ -29,11 +30,11 @@ const addBookForm = (obj = {}) => {
         <input type="checkbox" class="form-check-input" id="sale" ${obj.sale ? 'checked' : ''}>
         <label class="form-check-label" for="sale">On Sale?</label>
       </div>
-      <button type="submit" class="btn btn-primary">${obj.firebaseKey ? 'Update author' : 'Submit author'}</button>
+      <button type="submit" class="btn btn-primary">${obj.uid ? 'Update author' : 'Submit author'}</button>
     </form>`;
 
   renderToDOM('#form-container', domString);
-  selectAuthor(`${obj.author_id || ''}`);
+  selectAuthor(uid, `${obj.author_id || ''}`);
 };
 
 export default addBookForm;

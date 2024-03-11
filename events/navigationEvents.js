@@ -1,7 +1,7 @@
 import { getAuthors } from '../api/authorData';
 import { booksOnSale, getBooks } from '../api/bookData';
 import { showAuthors } from '../pages/authors';
-import { emptyBooks, showBooks } from '../pages/books';
+import { showBooks } from '../pages/books';
 import { signOut } from '../utils/auth';
 
 // navigation events
@@ -12,13 +12,8 @@ const navigationEvents = (uid) => {
 
   // TODO: BOOKS ON SALE
   document.querySelector('#sale-books').addEventListener('click', () => {
-    booksOnSale().then((response) => {
-      if (response.length > 0) {
-        showBooks(response);
-      } else {
-        emptyBooks();
-      }
-    });
+    console.warn('books on sale', booksOnSale(uid));
+    booksOnSale(uid).then(showBooks);
   });
 
   // TODO: ALL BOOKS

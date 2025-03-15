@@ -9,7 +9,7 @@
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "Jonah Thoma (Blue Lotus Coding)",
+  "author": "Jonah Thomas (Blue Lotus Coding)",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.2.0",

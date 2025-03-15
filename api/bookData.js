@@ -1,7 +1,7 @@
-// import client from '../utils/client';
+import client from '../utils/client';
 // API CALLS FOR BOOKS
 
-// const endpoint = client.databaseURL;
+const endpoint = client.databaseURL;
 
 // TODO: GET BOOKS
 const getBooks = () => new Promise((resolve, reject) => {

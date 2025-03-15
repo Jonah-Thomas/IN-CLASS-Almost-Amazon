@@ -4,7 +4,18 @@
 // const endpoint = client.databaseURL;
 
 // TODO: GET BOOKS
-const getBooks = () => {};
+const getBooks = () => new Promise((resolve, reject) => {
+  // Make API call to fetch books
+  fetch(`${endpoint}/books.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  .then((response) => response.json())
+  .then((data) => resolve(Object.values(data)))
+  .catch((reject));
+});
 
 // TODO: DELETE BOOK
 const deleteBook = () => {};
